@@ -3,13 +3,15 @@
     <TitleCard />
     <About />
     <FAQ />
+    <Submit :courses="courses" />
   </div>
 </template>
 
 <script>
-import TitleCard from '../sections/TitleCard.vue'
-import About from '../sections/About.vue'
-import FAQ from '../sections/FAQ.vue'
+import TitleCard from '../components/sections/TitleCard.vue'
+import About from '../components/sections/About.vue'
+import FAQ from '../components/sections/FAQ.vue'
+import Submit from '../components/sections/Submit.vue'
 
 export default {
   name: 'Home',
@@ -31,6 +33,7 @@ export default {
     TitleCard,
     About,
     FAQ,
+    Submit,
   },
 }
 </script>
