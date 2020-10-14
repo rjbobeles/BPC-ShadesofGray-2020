@@ -18,6 +18,14 @@ export default {
       default: null,
       type: Array,
     },
+    closeTime: {
+      default: 'Nan',
+      type: String,
+    },
+    openTime: {
+      default: 'NaN',
+      type: String,
+    },
   },
   components: {
     TitleCard,

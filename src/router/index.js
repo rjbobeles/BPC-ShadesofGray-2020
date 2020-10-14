@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Home from '../views/Home.vue'
+import NotFound from '../views/404.vue'
 
 import fetchStatus from '../helpers/api'
-import courses from '../helpers/courses'
 
 Vue.use(VueRouter)
 let apiRes = {}
@@ -14,23 +15,29 @@ const routes = [
     name: 'Home',
     component: Home,
     props: {
-      courses,
+      openTime: apiRes.open,
+      closeTime: apiRes.close,
+      courses: apiRes.courses,
     },
   },
   {
     path: '/soon',
-    name: 'Coming Soon',
+    name: 'Soon',
     component: () => import(/* webpackChunkName: "soon" */ '../views/Soon.vue'),
   },
   {
     path: '/thankyou',
-    name: 'Thank You',
+    name: 'Thanks',
     component: () => import(/* webpackChunkName: "thankyou" */ '../views/ThankYou.vue'),
   },
   {
     path: '/closed',
     name: 'Closed',
     component: () => import(/* webpackChunkName: "closed" */ '../views/Closed.vue'),
+  },
+  {
+    path: '*',
+    component: NotFound,
   },
 ]
 
@@ -40,21 +47,28 @@ const router = new VueRouter({
   routes,
 })
 
-// eslint-disable-next-line no-unused-vars
 router.beforeEach(async (to, from, next) => {
   apiRes = await fetchStatus()
 
-  console.log(apiRes)
   if (to.name === 'Home') {
-    console.log('Home')
-  } else if (to.name === 'Coming Soon') {
-    console.log('Coming Soon')
-  } else if (to.name === 'Thank You') {
-    console.log('Thank You')
+    if (apiRes.status === 412 && apiRes.debug !== true) {
+      if (apiRes.message === 'Coming Soon.') return next({ name: 'Soon' })
+      return next({ name: 'Closed' })
+    }
+  } else if (to.name === 'Soon') {
+    if (apiRes.status !== 412 && apiRes.debug !== true) return next({ name: 'Home' })
+    if (apiRes.message === 'Closed.') return next({ name: 'Closed' })
+  } else if (to.name === 'Thanks' && apiRes.debug !== true) {
+    if (apiRes.status === 412 && apiRes.debug !== true) {
+      if (apiRes.message === 'Coming Soon.') return next({ name: 'Soon' })
+      return next({ name: 'Closed' })
+    }
+    if (from.name !== 'Home') return next({ name: 'Home' })
   } else if (to.name === 'Closed') {
-    console.log('Closed')
+    if (apiRes.status !== 412 && apiRes.debug !== true) return next({ name: 'Home' })
+    if (apiRes.message === 'Coming Soon.' && apiRes.debug !== true) return next({ name: 'Soon' })
   }
-  next()
+  return next()
 })
 
 export default router
