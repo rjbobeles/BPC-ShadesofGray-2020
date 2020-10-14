@@ -37,6 +37,13 @@ module.exports = {
         'screen-1/6': '16.66vh',
         'screen-5/6': '83.34vh',
       },
+      fontSize: {
+        '7xl': '5rem',
+        '8xl': '6rem',
+        '9xl': '7.2rem',
+        '10xl': '8rem',
+        xxl: '9.5rem',
+      },
     },
     minHeight: {
       0: '0',
@@ -50,8 +57,8 @@ module.exports = {
       'screen-3/4': '75vh',
     },
     colors: {
-      gritty: '#0c0c0c',
-      mango: '#FEB51A',
+      parchment: '#FFF3E3',
+      smoke: '#525252',
       ash: '#FCFCFC',
       black: '#000000',
       white: '#FFFFFF',
