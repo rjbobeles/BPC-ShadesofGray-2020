@@ -1,1 +1,33 @@
 @import 'includes/fonts';
+
+body {
+  overflow-x: hidden; 
+}
+
+p, .georgia {
+  font-family: 'Georgia';
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50%); 
+    opacity: 0; 
+  }
+  to {
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1); 
+}
