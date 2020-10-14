@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "postcss-import": "^12.0.1",
     "vue": "^2.6.11",
+    "vue-kinesis": "^1.1.5",
     "vue-multiselect": "^2.1.6",
     "vue-router": "^3.2.0",
     "vuelidate": "^0.7.5"
