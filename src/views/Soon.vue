@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: 'Coming Soon',
+  name: 'Soon',
 }
 </script>

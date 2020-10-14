@@ -1,9 +1,9 @@
 <template>
-  <div class="thankyou">Thank You</div>
+  <div class="404">404</div>
 </template>
 
 <script>
 export default {
-  name: 'Thanks',
+  name: '404',
 }
 </script>

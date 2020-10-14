@@ -3,15 +3,17 @@
     <TitleCard />
     <About />
     <FAQ />
+    <Submit :courses="courses" />
   </div>
 </template>
 
 <script>
 import { WOW } from 'wowjs'
 
-import TitleCard from '../sections/TitleCard.vue'
-import About from '../sections/About.vue'
-import FAQ from '../sections/FAQ.vue'
+import TitleCard from '../components/sections/TitleCard.vue'
+import About from '../components/sections/About.vue'
+import FAQ from '../components/sections/FAQ.vue'
+import Submit from '../components/sections/Submit.vue'
 
 export default {
   name: 'Home',
@@ -20,11 +22,20 @@ export default {
       default: null,
       type: Array,
     },
+    closeTime: {
+      default: 'Nan',
+      type: String,
+    },
+    openTime: {
+      default: 'NaN',
+      type: String,
+    },
   },
   components: {
     TitleCard,
     About,
     FAQ,
+    Submit,
   },
   mounted() {
     const wow = new WOW({
