@@ -1,9 +1,9 @@
 <template>
   <div class="title-card h-screen bg-parchment">
     <div class="container h-full flex flex-col justify-center items-center mx-auto">
-      <img src="../assets/images/nameplates/SOG_Logo_black.png" class="logo" />
+      <img src="../../assets/images/nameplates/SOG_Logo_black.png" class="logo" />
       <h1 class="elephant text-8xl lg:text-9xl strip mb-5 leading-none normal-case">Epilogue</h1>
-      <img src="../assets/images/decor.png" class="decor" />
+      <img src="../../assets/images/decor.png" class="decor" />
       <p class="text-center w-3/4 xl:w-3/5 mt-24 text-smoke">
         And so it comes; the conclusion we did not expect unfurled at the palm of our hands. We hold
         each fragment together, trying to form a whole unfinished piece. What would have happened

@@ -4,7 +4,7 @@
       <div class="container mx-auto flex flex-col items-center py-8">
         <div class="w-7/12 flex">
           <hr />
-          <img src="../assets/images/decor.png" class="decor mx-8" />
+          <img src="../../assets/images/decor.png" class="decor mx-8" />
           <hr />
         </div>
         <h2 class="text-6xl georgia font-bold text-smoke my-3 text-center">
@@ -12,7 +12,7 @@
         </h2>
         <div class="w-7/12 flex mb-12">
           <hr />
-          <img src="../assets/images/decor.png" class="decor mx-8 rotate-180" />
+          <img src="../../assets/images/decor.png" class="decor mx-8 rotate-180" />
           <hr />
         </div>
         <div
@@ -121,7 +121,7 @@
 </template>
 
 <script>
-import FaqItem from '../components/FaqItem.vue'
+import FaqItem from '../FaqItem.vue'
 
 export default {
   name: 'FAQ',
@@ -154,15 +154,15 @@ export default {
       background-size: cover;
     }
     #faq-group__img-1 {
-      background-image: url('../assets/images/faq-1.png');
+      background-image: url('../../assets/images/faq-1.png');
       padding-bottom: 180%;
     }
     #faq-group__img-2 {
-      background-image: url('../assets/images/faq-2.png');
+      background-image: url('../../assets/images/faq-2.png');
       padding-bottom: 150%;
     }
     #faq-group__img-3 {
-      background-image: url('../assets/images/faq-3.png');
+      background-image: url('../../assets/images/faq-3.png');
       padding-bottom: 150%;
     }
   }
