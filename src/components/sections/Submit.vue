@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Form :courses="courses" />
+    <Form :courses="courses" v-on:submitting="$emit('submitting', $event)" />
   </div>
 </template>
 

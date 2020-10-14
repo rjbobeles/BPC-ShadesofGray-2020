@@ -3,7 +3,7 @@
     <TitleCard />
     <About />
     <FAQ />
-    <Submit :courses="courses" />
+    <Submit :courses="courses" v-on:submitting="$emit('submitting', $event)" />
   </div>
 </template>
 

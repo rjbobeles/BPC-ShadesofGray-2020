@@ -232,6 +232,11 @@ export default {
         })
     },
   },
+  watch: {
+    submitting() {
+      this.$emit('submitting', this.submitting)
+    },
+  },
   validations: {
     userData: {
       name: {
