@@ -5,9 +5,11 @@ import Home from '../views/Home.vue'
 import NotFound from '../views/404.vue'
 
 import fetchStatus from '../helpers/api'
+import courses from '../helpers/courses'
+
+let apiRes = {}
 
 Vue.use(VueRouter)
-let apiRes = {}
 
 const routes = [
   {
@@ -17,7 +19,7 @@ const routes = [
     props: {
       openTime: apiRes.open,
       closeTime: apiRes.close,
-      courses: apiRes.courses,
+      courses,
     },
   },
   {
