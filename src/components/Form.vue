@@ -219,15 +219,13 @@ export default {
           data,
         })
         .then(() => {
-          this.submitting = false
-          this.hasError = true
           this.submitted = false
+          this.hasError = true
           this.$router.push({ name: 'Thanks' })
         })
         .catch(() => {
           this.submitting = false
           this.hasError = true
-          this.submitted = false
           this.$router.push({ name: 'Home' })
         })
     },

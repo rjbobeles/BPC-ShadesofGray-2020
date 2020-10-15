@@ -5,5 +5,8 @@
 <script>
 export default {
   name: 'Thanks',
+  mounted() {
+    this.$emit('submitting', false)
+  },
 }
 </script>
