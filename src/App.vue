@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Loading ref="loading" />
-    <router-view />
+    <Loading :loading="loading" />
+    <router-view v-on:submitting="toggle($event)" />
   </div>
 </template>
 
@@ -10,6 +10,11 @@ import Loading from './components/Loading.vue'
 import SmoothScroll from './assets/js/smoothscroll'
 
 export default {
+  data() {
+    return {
+      loading: false,
+    }
+  },
   components: {
     Loading,
   },
@@ -17,6 +22,9 @@ export default {
     UpdateLax() {
       this.$lax.update(window.scrollY)
       window.requestAnimationFrame(this.UpdateLax)
+    },
+    toggle(status) {
+      this.loading = status
     },
   },
   mounted() {
