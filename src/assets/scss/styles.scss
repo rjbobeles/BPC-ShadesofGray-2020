@@ -1,4 +1,5 @@
 @import 'includes/fonts';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css'); 
 
 body {
   overflow-x: hidden; 
@@ -16,18 +17,46 @@ img {
   -ms-user-select: none;
 }
 
-@keyframes fadeInUp {
+@-webkit-keyframes fadeInUp {
   from {
-    transform: translateY(50%); 
-    opacity: 0; 
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
   }
+
   to {
-    transform: translateY(0); 
-    opacity: 1; 
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
 
-.fadeInUp {
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInUp {
+  -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
-  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1); 
+}
+@-webkit-keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 500px, 0);
+    transform: translate3d(0, 500px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }

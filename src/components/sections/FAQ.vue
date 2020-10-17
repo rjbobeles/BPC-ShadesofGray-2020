@@ -26,7 +26,9 @@
             </kinesis-element>
           </div>
           <div
-            class="order-1 md:order-2 text w-full md:w-3/5 lg:w-7/12 xl:w-1/2 md:pl-5 xl:pl-12 flex flex-col justify-between mb-5 md:mb-0 md:mt-48 xl:mt-0 relative z-10"
+            class="faq-group__text order-1 md:order-2 w-full md:w-3/5 lg:w-7/12 xl:w-1/2 md:pl-5 xl:pl-12 flex flex-col justify-between mb-5 md:mb-0 md:mt-48 xl:mt-0 relative z-10"
+            ref="faqGroup1"
+            data-lax-preset="eager-150"
           >
             <FaqItem
               number="1"
@@ -55,7 +57,9 @@
           class="faq-group w-full items-center flex flex-col md:flex-row items-stretch pl-4 pr-2"
         >
           <div
-            class="text w-full md:w-3/5 xl:w-1/2 md:pr-5 xl:pr-12 flex flex-col justify-between md:mt-32 xl:mt-0 relatize z-10 mb-5 md:mb-0"
+            class="faq-group__text w-full md:w-3/5 xl:w-1/2 md:pr-5 xl:pr-12 flex flex-col justify-between md:mt-32 xl:mt-0 relatize z-10 mb-5 md:mb-0"
+            ref="faqGroup2"
+            data-lax-preset="eager-150"
           >
             <FaqItem
               number="4"
@@ -94,7 +98,9 @@
             </kinesis-element>
           </div>
           <div
-            class="order-1 md:order-2 text w-full md:w-3/5 lg:w-7/12 xl:w-1/2 md:pl-5 xl:pl-12 flex flex-col justify-between mb-5 md:mb-0 md:mt-48 xl:mt-0 relative z-10"
+            class="faq-group__text order-1 md:order-2 w-full md:w-3/5 lg:w-7/12 xl:w-1/2 md:pl-5 xl:pl-12 flex flex-col justify-between mb-5 md:mb-0 md:mt-48 xl:mt-0 relative z-10"
+            ref="faqGroup3"
+            data-lax-preset="eager-150"
           >
             <FaqItem
               number="7"
@@ -171,8 +177,10 @@ export default {
 @media (max-width: 1279px) {
   .faq {
     .faq-group {
-      .text {
+      .faq-group__text {
         min-height: 860px;
+        background-color: white;
+        padding: 20px;
       }
     }
   }

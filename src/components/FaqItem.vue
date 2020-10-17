@@ -1,8 +1,13 @@
 <template>
   <div class="mb-16 sm:mb-24 md:mb-0 faq-group__item">
-    <h6 class="font-bold uppercase text-smoke text-lg mb-1">FAQ {{ number }}</h6>
-    <h4 class="text-smoke mb-8">{{ question }}</h4>
-    <p class="text-smoke text-sm" v-html="answer"></p>
+    <h6
+      class="font-bold uppercase text-smoke text-lg mb-1 wow fadeInUp gotham-bold"
+      data-wow-offset="100"
+    >
+      FAQ {{ number }}
+    </h6>
+    <h4 class="text-smoke mb-8 wow fadeInUp" data-wow-offset="100">{{ question }}</h4>
+    <p class="text-smoke text-sm wow fadeInUp" v-html="answer" data-wow-offset="100"></p>
   </div>
 </template>
 
