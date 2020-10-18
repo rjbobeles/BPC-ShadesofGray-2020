@@ -134,6 +134,16 @@ export default {
   components: {
     FaqItem,
   },
+  mounted() {
+    this.$lax.addElement(this.$refs.faqGroup1)
+    this.$lax.addElement(this.$refs.faqGroup2)
+    this.$lax.addElement(this.$refs.faqGroup3)
+  },
+  beforeDestroy() {
+    this.$lax.addElement(this.$refs.faqGroup1)
+    this.$lax.addElement(this.$refs.faqGroup2)
+    this.$lax.addElement(this.$refs.faqGroup3)
+  },
 }
 </script>
 
@@ -203,8 +213,11 @@ export default {
     .faq-group {
       padding-top: 3rem;
       padding-bottom: 3rem;
-      .text {
+      padding-left: 5px;
+      padding-right: 5px;
+      .faq-group__text {
         min-height: initial;
+        padding: 10px;
       }
     }
   }

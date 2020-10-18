@@ -2,7 +2,7 @@
   <div class="about bg-white w-screen">
     <div class="container mx-auto h-full flex flex-col justify-center items-center pt-16">
       <img src="../../assets/images/decor.png" class="decor" />
-      <p class="text-smoke w-4/5 md:w-2/3 lg:w-1/2 mt-12" ref="about" data-lax-preset="blurIn">
+      <p class="text-smoke w-4/5 md:w-2/3 lg:w-1/2 mt-12">
         <span class="first-letter">I</span>
         n this year’s Shades of Gray, the official literary folio of the students of De La
         Salle-College of Saint Benilde, we’re inviting you to finish sketching portraits that have
@@ -17,12 +17,6 @@
 <script>
 export default {
   name: 'About',
-  mounted() {
-    this.$lax.addElement(this.$refs.about)
-  },
-  beforeDestroy() {
-    this.$lax.addElement(this.$refs.about)
-  },
 }
 </script>
 

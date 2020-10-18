@@ -1,85 +1,33 @@
 <template>
   <div>
     <form method="post" @submit.prevent="checkForm">
-      <div>
+      <div class="input-group">
+        <p class="font-bold text-smoke text-sm">Full Name:</p>
         <input
           type="text"
           name="name"
           id="name"
           v-model.trim="userData.name"
-          placeholder="LAST NAME, FIRST NAME "
+          placeholder="[Last Name, First Name]"
           class="w-full"
+          :class="[$v.userData.name.$error ? 'hasError' : '']"
           @blur="$v.userData.name.$touch()"
         />
         <span v-show="$v.userData.name.$error" v-if="!submitted" class="text-xs error self-start">
           Name must follow the format: Last Name, First Name
         </span>
       </div>
-      <div>
-        <multiselect
-          v-if="courses"
-          style="overflow: auto"
-          v-model.trim="userData.course"
-          deselect-label="Can't remove this value"
-          track-by="id"
-          :custom-label="courseLabel"
-          placeholder="COURSE"
-          :options="courses"
-          :searchable="false"
-          :allow-empty="false"
-          :max-height="100"
-          class="mt-4"
-          @close="$v.userData.course.$touch()"
-        >
-          <template slot="singleLabel" slot-scope="{ option }">
-            [{{ option.code }}] {{ option.course }}
-          </template>
-        </multiselect>
-        <span v-show="$v.userData.course.$error" v-if="!submitted" class="text-xs error self-start">
-          Course is required
-        </span>
-      </div>
-      <div>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="BENILDE EMAIL"
-          class="w-full mt-4"
-          v-model.trim="userData.email"
-          @blur="$v.userData.email.$touch()"
-        />
-        <span v-show="$v.userData.email.$error" v-if="!submitted" class="text-xs error self-start">
-          Email must be a valid benilde email
-        </span>
-      </div>
-      <div>
-        <input
-          type="text"
-          name="phoneNo"
-          id="phoneNo"
-          v-model.trim="userData.phoneNo"
-          placeholder="PHONE NUMBER"
-          class="w-full mt-4"
-          @blur="$v.userData.phoneNo.$touch()"
-        />
-        <span
-          v-show="$v.userData.phoneNo.$error"
-          v-if="!submitted"
-          class="text-xs error self-start"
-        >
-          Phone number must be a valid
-        </span>
-      </div>
-      <div>
+      <div class="input-group">
         <div>
+          <p class="font-bold text-smoke text-sm">ID Number:</p>
           <input
             type="text"
             name="idNumber"
             id="idNumber"
             v-model.trim="userData.idNumber"
-            placeholder="ID NUMBER (Ex. 11012345)"
-            class="w-full mt-4"
+            placeholder="[11812345]"
+            class="w-full"
+            :class="[$v.userData.idNumber.$error ? 'hasError' : '']"
             @blur="$v.userData.idNumber.$touch()"
           />
         </div>
@@ -91,15 +39,76 @@
           ID number must be a valid Benilde ID number
         </span>
       </div>
-      <div>
+      <div class="input-group">
+        <p class="font-bold text-smoke text-sm">Benilde Mail:</p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="[name.surname@benilde.edu.ph]"
+          class="w-full"
+          :class="[$v.userData.email.$error ? 'hasError' : '']"
+          v-model.trim="userData.email"
+          @blur="$v.userData.email.$touch()"
+        />
+        <span v-show="$v.userData.email.$error" v-if="!submitted" class="text-xs error self-start">
+          Email must be a valid benilde email
+        </span>
+      </div>
+      <div class="input-group">
+        <p class="font-bold text-smoke text-sm">Course:</p>
+        <multiselect
+          v-if="courses"
+          v-model.trim="userData.course"
+          deselect-label="Select another course to remove"
+          track-by="id"
+          :custom-label="courseLabel"
+          placeholder="Choose your course"
+          :options="courses"
+          :searchable="true"
+          :allow-empty="false"
+          :max-height="300"
+          @close="$v.userData.course.$touch()"
+        >
+          <template slot="singleLabel" slot-scope="{ option }">
+            [{{ option.code }}] {{ option.course }}
+          </template>
+        </multiselect>
+        <span v-show="$v.userData.course.$error" v-if="!submitted" class="text-xs error self-start">
+          Course is required
+        </span>
+      </div>
+      <div class="input-group">
+        <p class="font-bold text-smoke text-sm">Phone Number:</p>
+        <input
+          type="text"
+          name="phoneNo"
+          id="phoneNo"
+          v-model.trim="userData.phoneNo"
+          placeholder="[0923 456 7890]"
+          class="w-full"
+          :class="[$v.userData.phoneNo.$error ? 'hasError' : '']"
+          @blur="$v.userData.phoneNo.$touch()"
+        />
+        <span
+          v-show="$v.userData.phoneNo.$error"
+          v-if="!submitted"
+          class="text-xs error self-start"
+        >
+          Phone number must be a valid
+        </span>
+      </div>
+      <div class="input-group">
         <div>
+          <p class="font-bold text-smoke text-sm">Pen Name:</p>
           <input
             type="text"
             name="penName"
             id="penName"
             v-model.trim="userData.penName"
-            placeholder="PEN NAME"
-            class="w-full mt-4"
+            placeholder="[-]"
+            class="w-full"
+            :class="[$v.userData.penName.$error ? 'hasError' : '']"
             @blur="$v.userData.penName.$touch()"
           />
         </div>
@@ -111,15 +120,17 @@
           Pen Name must be 1-30 characters
         </span>
       </div>
-      <div>
+      <div class="input-group">
         <div>
+          <p class="font-bold text-smoke text-sm">Title Piece:</p>
           <input
             type="text"
             name="title"
             id="title"
             v-model.trim="userData.title"
-            placeholder="TITLE"
-            class="w-full mt-4"
+            placeholder="[Title]"
+            class="w-full"
+            :class="[$v.userData.title.$error ? 'hasError' : '']"
             @blur="$v.userData.title.$touch()"
           />
         </div>
@@ -127,20 +138,22 @@
           Title must be 1-100 characters
         </span>
       </div>
-      <div>
+      <div class="input-group">
+        <p class="font-bold text-smoke text-sm">Enter your piece here:</p>
         <input
           name="drive"
           id="drive"
           v-model.trim="userData.drive"
-          placeholder="GOOGLE DRIVE LINK"
-          class="w-full mt-4"
+          placeholder="[Google Docs link]"
+          class="w-full"
+          :class="[$v.userData.drive.$error ? 'hasError' : '']"
           @blur="$v.userData.drive.$touch()"
         />
         <span v-show="$v.userData.drive.$error" v-if="!submitted" class="text-xs error self-start">
           Google Drive link must be a valid and has sharing enabled.
         </span>
       </div>
-      <div>
+      <div class="input-group">
         <p>T & C</p>
         <div>
           <button type="submit">Submit</button>
@@ -288,3 +301,41 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+.input-group {
+  margin-bottom: 2.5rem;
+  input {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+    font-size: 1.75rem;
+    font-family: 'gotham-light', sans-serif;
+  }
+
+  input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .error {
+    color: rgba(202, 96, 96, 0.938);
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+  }
+
+  .hasError {
+    background-color: rgb(250, 245, 247);
+  }
+}
+
+@media (max-width: 767px) {
+  .input-group {
+    input {
+      font-size: 1.25rem;
+    }
+  }
+}
+</style>
