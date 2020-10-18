@@ -4,6 +4,7 @@
     <About />
     <FAQ />
     <Submit :courses="courses" v-on:submitting="$emit('submitting', $event)" />
+    <Footer />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import TitleCard from '../components/sections/TitleCard.vue'
 import About from '../components/sections/About.vue'
 import FAQ from '../components/sections/FAQ.vue'
 import Submit from '../components/sections/Submit.vue'
+import Footer from '../components/sections/Footer.vue'
 
 export default {
   name: 'Home',
@@ -36,6 +38,7 @@ export default {
     About,
     FAQ,
     Submit,
+    Footer,
   },
   mounted() {
     const wow = new WOW({
