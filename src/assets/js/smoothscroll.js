@@ -44,7 +44,7 @@ const SmoothScroll = (target, speed, smooth) => {
     if (!moving) update()
   }
 
-  target.addEventListener('mousewheel', scrolled, false)
+  target.addEventListener('mousewheel', scrolled, { capture: false, passive: false })
 }
 
 export default SmoothScroll
