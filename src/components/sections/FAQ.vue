@@ -3,16 +3,15 @@
     <kinesis-container class="w-full">
       <div class="container mx-auto flex flex-col items-center py-8">
         <div class="w-7/12 flex">
-          <hr />
+          <hr class="line-top" />
           <img src="../../assets/images/decor.png" class="decor mx-8" />
-          <hr />
+          <hr class="line-top" />
         </div>
         <h2 class="text-6xl georgia font-bold text-smoke my-3 text-center">
           Frequently Asked Questions
         </h2>
         <div class="w-7/12 flex mb-12">
           <hr />
-          <img src="../../assets/images/decor.png" class="decor mx-8 rotate-180" />
           <hr />
         </div>
         <div
@@ -152,7 +151,10 @@ export default {
   hr {
     border-top: 1px solid rgba(185, 185, 185, 0.733);
     width: 50%;
-    margin-top: 15px;
+    margin-top: 18px;
+  }
+  .line-top {
+    margin-top: 40px;
   }
   .decor {
     width: 120px;

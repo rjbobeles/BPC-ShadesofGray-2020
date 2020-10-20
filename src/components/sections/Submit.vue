@@ -47,7 +47,7 @@ export default {
     hr {
       border-top: 1px solid rgba(185, 185, 185, 0.733);
       width: 50%;
-      margin-top: 15px;
+      margin-top: 40px;
     }
     .decor {
       width: 150px;
