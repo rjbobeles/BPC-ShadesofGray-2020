@@ -24,7 +24,7 @@
             Saint Benilde. In this year’s Shades of Gray, we’re inviting you to share untold
             stories, might it be because it ended abruptly or have yet to come, through literature.
             <br /><br /><br />
-            The Benildean Press Corps © 2020. All rights reserved.
+            Benildean Press Corps © 2020. All rights reserved.
           </div>
           <div class="w-full sm:w-2/5 lg:w-1/3 georgia text-sm xl:pl-16">
             STAY CONNECTED.

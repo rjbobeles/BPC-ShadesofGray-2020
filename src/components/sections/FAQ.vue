@@ -32,7 +32,7 @@
             <FaqItem
               number="1"
               question="Where should I submit my entry?"
-              answer="Submit your entry by filling up the form at the bottom of this website (sogepilogue.thebenildean.org) and make sure to answer all the questions."
+              answer="Submit your entry by filling up the form at the bottom of this website (sog.thebenildean.org) and make sure to answer all the questions."
             />
             <FaqItem
               number="2"
