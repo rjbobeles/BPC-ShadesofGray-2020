@@ -266,7 +266,7 @@ export default {
         minLength: minLength(4),
         maxLength: maxLength(60),
         isFullName(name) {
-          return /^(((\s)?[A-Z][a-z]*)+,((\s)[A-Z][a-z]*)+)$/.test(name)
+          return /^(((\s)?([A-Z]|Ñ)([a-z]|ñ)*(-)?)+,((\s)([A-Z]|Ñ)(\.)?([a-z]|ñ)*)+)$/.test(name)
         },
       },
       idNumber: {
@@ -287,7 +287,7 @@ export default {
       phoneNo: {
         required,
         isPhoneNo(phoneNo) {
-          return /(09)[0-9]{2}(\s)[0-9]{3}(\s)[0-9]{4}\b/.test(phoneNo)
+          return /^(\+)?(09|63)(\s)?[0-9]{2,3}(\s)?[0-9]{3}(\s)?[0-9]{4}\b/.test(phoneNo)
         },
       },
       penName: {
@@ -303,9 +303,7 @@ export default {
       drive: {
         required,
         isDrive(drive) {
-          return /^((https:\/\/)?(www.)?(drive.google.com\/drive\/folders\/){1}[a-zA-Z0-9_-]+(\?usp=sharing)\b)$/.test(
-            drive
-          )
+          return /^(.)*(docs|drive).google.com(.)*\b/.test(drive)
         },
       },
     },

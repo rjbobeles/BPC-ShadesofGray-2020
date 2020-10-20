@@ -6,7 +6,7 @@
       data-lax-preset="eager-150"
     >
       <img
-        src="../../assets/images/sog_white_logo.png"
+        src="../../assets/images/SOG GIF Loop HD.gif"
         class="w-2/3 sm:w-1/2 md:w-2/5 lg:w-1/3 xl:w-1/4"
       />
       <p class="text-center w-3/4 xl:w-3/5 mt-8 text-white">

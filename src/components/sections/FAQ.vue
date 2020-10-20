@@ -63,7 +63,7 @@
             <FaqItem
               number="4"
               question="Until when can I submit entries?"
-              answer="You may submit entries from <b>October 14, 2020 to November 10, 2020.</b>"
+              answer="You may submit entries from <b>October 21, 2020 to November 10, 2020.</b>"
             />
             <FaqItem
               number="5"
