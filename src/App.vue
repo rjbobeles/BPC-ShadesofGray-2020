@@ -7,7 +7,6 @@
 
 <script>
 import Loading from './components/Loading.vue'
-import SmoothScroll from './assets/js/smoothscroll'
 
 export default {
   data() {
@@ -28,9 +27,6 @@ export default {
     },
   },
   mounted() {
-    if (!window.smoothScroll) {
-      window.smoothScroll = SmoothScroll(document, 180, 20)
-    }
     window.requestAnimationFrame(this.UpdateLax)
   },
   created() {
