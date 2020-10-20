@@ -63,7 +63,7 @@
           deselect-label="Select another course to remove"
           track-by="id"
           :custom-label="courseLabel"
-          placeholder="Choose your course"
+          placeholder="[Type your course]"
           :options="courses"
           :searchable="true"
           :allow-empty="false"
@@ -154,9 +154,20 @@
         </span>
       </div>
       <div class="input-group">
-        <p>T & C</p>
-        <div>
-          <button type="submit">Submit</button>
+        <p class="text-xs text-smoke">
+          Any submitted content in Shades of Gray: Epilogue becomes the property of the Benildean
+          Press Corps (BPC) and the Student Publications Unit (SPU). By willingly submitting to
+          Shades of Gray: Epilogue, the contributor gives permission to use the said content in any
+          way BPC and SPU see fit. In addition, all submissions must be original works. If found
+          guilty of plagiarism, violators will be subject to the College’s rules and regulations.
+        </p>
+        <div class="mt-8">
+          <button
+            type="submit"
+            class="bg-black text-ash px-4 py-2 text-2xl gotham-light submit-button"
+          >
+            Submit
+          </button>
         </div>
       </div>
     </form>
@@ -255,7 +266,7 @@ export default {
         minLength: minLength(4),
         maxLength: maxLength(60),
         isFullName(name) {
-          return /^([A-Z][a-z]*,((\s)[A-Z][a-z]*)+)$/.test(name)
+          return /^(((\s)?[A-Z][a-z]*)+,((\s)[A-Z][a-z]*)+)$/.test(name)
         },
       },
       idNumber: {
@@ -276,7 +287,7 @@ export default {
       phoneNo: {
         required,
         isPhoneNo(phoneNo) {
-          return /((^(\+)(\d){12}$)|(^\d{11}$))/.test(phoneNo)
+          return /(09)[0-9]{2}(\s)[0-9]{3}(\s)[0-9]{4}\b/.test(phoneNo)
         },
       },
       penName: {
