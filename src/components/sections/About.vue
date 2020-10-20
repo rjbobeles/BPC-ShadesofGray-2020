@@ -1,6 +1,6 @@
 <template>
   <div class="about bg-white w-screen">
-    <div class="container mx-auto h-full flex flex-col justify-center items-center pt-16">
+    <div class="container mx-auto h-full flex flex-col justify-center items-center">
       <img src="../../assets/images/decor.png" class="decor" />
       <p class="text-smoke w-4/5 md:w-2/3 lg:w-1/2 mt-12">
         <span class="first-letter">I</span>

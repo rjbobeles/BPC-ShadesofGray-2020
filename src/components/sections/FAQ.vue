@@ -170,15 +170,15 @@ export default {
       background-size: cover;
     }
     #faq-group__img-1 {
-      background-image: url('../../assets/images/faq-1.png');
+      background-image: url('../../assets/images/faq-1.jpg');
       padding-bottom: 180%;
     }
     #faq-group__img-2 {
-      background-image: url('../../assets/images/faq-2.png');
+      background-image: url('../../assets/images/faq-2.jpg');
       padding-bottom: 150%;
     }
     #faq-group__img-3 {
-      background-image: url('../../assets/images/faq-3.png');
+      background-image: url('../../assets/images/faq-3.jpg');
       padding-bottom: 150%;
     }
   }

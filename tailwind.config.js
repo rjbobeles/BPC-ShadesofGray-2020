@@ -57,7 +57,7 @@ module.exports = {
       'screen-3/4': '75vh',
     },
     colors: {
-      parchment: '#FFF3E3',
+      cream: '#fdf2e3',
       smoke: '#525252',
       ash: '#FCFCFC',
       black: '#000000',
