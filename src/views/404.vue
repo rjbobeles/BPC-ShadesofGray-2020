@@ -23,6 +23,9 @@ export default {
 .fourofour {
   background-image: url(../assets/images/full.png);
 }
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 @media (max-width: 639px) {
   h1 {
     font-size: 10vw;
