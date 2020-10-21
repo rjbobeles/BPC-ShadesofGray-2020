@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '',
+  publicPath: '/BPC-ShadesofGray-2020/',
 }
