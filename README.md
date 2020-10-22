@@ -1,4 +1,4 @@
-# Dekunstrukt: Epilogue
+# Shades of Gray: Epilogue
 
 The Official Literary Folio of the students of De La Salle-College of Saint Benilde for A.Y. 20-21 (Submission).
 
